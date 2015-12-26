@@ -23,4 +23,29 @@ public class SearcherUtilTest {
 	public void searchByTermTest(){
 		su.searchByTermRange("id", "1", "3", 3);
 	}
+	
+	@Test
+	public void searchByPrefixTest(){
+		su.searchByPrefix("name", "j", 3);
+	}
+	
+	@Test
+	public void searchByWildcard(){
+		su.searchByWildcard("name", "j???", 3);
+	}
+	
+	@Test
+	public void searchByBoolean(){
+		su.searchByBoolean(3);
+	}
+	
+	@Test
+	public void searchByPhrase(){
+		su.searchByPhrase(3);
+	}
+	
+	@Test
+	public void searchByFuzzy(){
+		su.searchByFuzzy(3);
+	}
 }

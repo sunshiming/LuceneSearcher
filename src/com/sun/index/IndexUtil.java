@@ -33,7 +33,7 @@ public class IndexUtil {
 			"I like football and I like basketball too", 
 			"I like movie and swim"
 	};
-	private int[] attachs = {2, 3, 1, 4, 5, 5};
+//	private int[] attachs = {2, 3, 1, 4, 5, 5};
 	private String[] names = {"zhangsan", "lisi", "john", "jetty", "mike", "jake"};
 	private Directory directory = null;
 	private Map<String, Float> score = new HashMap<String, Float>();
