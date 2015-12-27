@@ -223,6 +223,23 @@ public class SearcherUtil {
 		}
 	}
 	
+	public void searchByQueryParser(Query query, int num){
+		try{
+			IndexSearcher search = getSearcher();
+			TopDocs tds = search.search(query, num);
+			System.out.println("一共查询出" + tds.totalHits);
+			
+			for(ScoreDoc sd : tds.scoreDocs){
+				Document doc = search.doc(sd.doc);
+				outPutDocument(sd, doc);
+			}
+			
+			search.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
 	public IndexSearcher getSearcher(){
 		try{
 			if(null == reader){
